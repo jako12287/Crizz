@@ -1,4 +1,4 @@
-import { GETALL } from "../actions/types";
+import {GETALL} from '../actions/types'
 
 let initialState = {
     countries:[]
