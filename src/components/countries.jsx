@@ -8,6 +8,8 @@ export const Countries = ()=>{
 
     const dispatch = useDispatch()
     const $countries = useSelector((state)=> state.countries)
+    const $search = useSelector((state)=>state.search.toLowerCase())
+    const $continent = useSelector((state)=>state.continent.toLowerCase())
     
 
         useEffect(()=>{
@@ -17,7 +19,9 @@ export const Countries = ()=>{
 
     return(
         <Container>
-         {$countries && $countries.map((el)=><Country 
+         {$countries && $countries.filter((el)=>el.region.toLowerCase().includes($continent))
+                                  .filter((el)=>el.name.toLowerCase().includes($search))
+                                  .map((el)=><Country 
                                                 key={el.id}
                                                 name={el.name}
                                                 population={el.population}
@@ -32,7 +36,6 @@ export const Countries = ()=>{
 }
 
 const Container = styled.div` 
-    border: 2px solid red;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     justify-items: center;

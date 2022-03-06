@@ -1,7 +1,9 @@
-import {GETALL} from '../actions/types'
+import {CONTINENT, GETALL, SEARCH} from '../actions/types'
 
 let initialState = {
-    countries:[]
+    countries:[],
+    search:'',
+    continent:''
     
 }
 
@@ -12,6 +14,16 @@ export const reducer = (state = initialState, action)=>{
                 ...state,
                 countries: [...action.payload]
             } 
+        case SEARCH:
+            return{
+                ...state,
+                search: action.payload
+            }
+        case CONTINENT:
+            return{
+                ...state,
+                continent: action.payload
+            }
 
         default: 
             return state

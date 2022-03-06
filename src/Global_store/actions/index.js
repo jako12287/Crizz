@@ -1,6 +1,5 @@
-import { GETALL } from "./types";
+import { CONTINENT, GETALL, SEARCH } from "./types";
 const API = 'https://restcountries.com/v3.1/all'
-const Api2 = 'https://restcountries.com/v3/all'
 
 
 
@@ -31,4 +30,27 @@ export const getCountries = ()=>{
                           .catch(err => console.log(err))
 
     } 
+}
+
+export const Search = (value)=>{
+
+  return async(dispatch)=>{
+      dispatch({
+        type:SEARCH,
+        payload:value
+      })
+  }
+
+}
+
+export const Continent = (value)=>{
+
+  return async(dispatch)=>{
+    dispatch({
+      type:CONTINENT,
+      payload:value
+    })
+
+  }
+
 }

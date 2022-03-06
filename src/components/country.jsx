@@ -36,10 +36,11 @@ export const Country = ({name, image, population, region, capital})=>{
 }
 
 const fontColor = '#ffffff'
-const bgColor = '#04293A';
+const bgColorL = '#2b3743';
+const bgColor = '#202c37';
 
 const Container = styled.div`
-    background-color: ${bgColor};
+    background-color: ${bgColorL};
     margin-top: 4rem;
     width: 12rem;
     height: 17rem;
@@ -86,7 +87,7 @@ const Info = styled.div`
 
 `
 
-const Population = styled.h3`
+const Population = styled.div`
     height: 1rem;
     font-size: .8rem;
     margin: 0;
@@ -97,7 +98,7 @@ const Population = styled.h3`
 
 `
 
-const Region = styled.h3`
+const Region = styled.div`
     height: 1rem;
     margin: 0;
     font-size: .8rem;
@@ -107,7 +108,7 @@ const Region = styled.h3`
 
 `
 
-const Capital = styled.h3`
+const Capital = styled.div`
     height: 1rem;
     color: ${fontColor};
     margin: 0;
