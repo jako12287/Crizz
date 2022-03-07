@@ -71,8 +71,13 @@ const Button = styled.button`
     width: 5rem;
     height: 2rem;
     border: none;
+    border-radius:.3rem;
     font-size:.8rem;
     cursor: pointer;
+    @media(max-width: 1180px){
+     margin-top: 30px ;
+
+  }
 `
 
 const Render = styled.div` 

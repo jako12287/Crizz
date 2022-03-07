@@ -44,6 +44,7 @@ const Navbar = styled.div`
     width: 100%;
     display: flex;
     justify-content:center;
+   
 
 `
 
@@ -52,6 +53,7 @@ const SubNav = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
+  
 
 `
 

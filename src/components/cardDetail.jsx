@@ -126,6 +126,11 @@ const SubContain = styled.div`
   width: 90%;
   height: 100%;
   display: flex;
+  @media(max-width: 1180px){
+       flex-direction: column;
+       margin-top: 40px;
+
+  }
 `
 const Flag = styled.div`
   width: 40%;
@@ -155,6 +160,10 @@ const Title = styled.div`
 `
 const ContainInfo = styled.div` 
   display: flex;
+  @media(max-width: 1180px){
+       flex-direction: column;
+       gap:2rem;
+  }
 `
 
 const SeparateOne = styled.div` 
@@ -168,6 +177,9 @@ const SeparateTwo = styled.div`
   display: flex;
   flex-direction: column;
   justify-content:start;
+  @media(max-width: 1180px){
+       width: 20rem;
+  }
 `
 
 const Div = styled.div`
@@ -192,6 +204,9 @@ font-weight: 300;
 const Border = styled.div` 
   display: flex;
   justify-content: start;
+  @media(max-width: 1180px){
+       flex-direction: column;
+  }
 `
 
 const Box = styled.div` 
@@ -199,11 +214,17 @@ const Box = styled.div`
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  @media(max-width: 1180px){
+  justify-content: space-between;
+  align-items: flex-start;
+  height: 5rem;
+
+  }
 
 `
 
 const P = styled.p` 
-  width: 25%;
+  width: 20rem;
   font-weight: bold;
 `
 const ButtonBorder = styled.button`  

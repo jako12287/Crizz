@@ -44,6 +44,8 @@ export const Country = ({name, image, population, region, capital, id})=>{
 
 
 const Container = styled.div`
+    border: 8px solid ${props=>props.theme.bgColorL};
+    border-radius: 8px;
     background-color: ${props=>props.theme.bgColorL};
     color: ${props=>props.theme.text} ; 
     margin-top: 4rem;
@@ -52,6 +54,10 @@ const Container = styled.div`
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+    @media(max-width: 630px){
+        width: 16rem;
+        height: 22rem;
+  }
 
 
 `
