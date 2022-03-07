@@ -6,6 +6,7 @@ import { CardDetail } from "../components/cardDetail"
 import { Link } from "react-router-dom"
 import styled from "styled-components"
 import { NavBar } from "../components/NavBar"
+import { Loader } from "../components/Loader/Loader"
 
 export const Detail = ()=>{
     const dispatch = useDispatch()
@@ -28,8 +29,8 @@ export const Detail = ()=>{
                 <Link to={'/'}><Button>🡨 Back</Button></Link>
             </ContainButton>
 
-            <Render>
-                    {$detail && $detail.map((el)=><CardDetail 
+            <Render>  
+                    {(!$detail) ? <Loader/> : $detail.map((el)=><CardDetail 
                         key={el.id}
                         image={el.image}
                         name={el.name}

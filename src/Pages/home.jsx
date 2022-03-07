@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux"
 import { Continent, Search } from "../Global_store/actions"
 import styled from "styled-components"
 import { NavBar } from "../components/NavBar"
+import { Loader } from '../components/Loader/Loader'
 
 
 export const Home = ()=>{
@@ -45,7 +46,7 @@ export const Home = ()=>{
             </Filters>
 
             <Render>
-            {<Countries/>&&<Countries/>}
+            !<Countries/> ? <Loader/> : <Countries/>
             </Render>
 
 

@@ -1,6 +1,6 @@
-// import { useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import styled from "styled-components";
+import { Loader } from "./Loader/Loader";
 
 
 export const CardDetail = ({
@@ -51,10 +51,6 @@ export const CardDetail = ({
   return(
   <Contain>
    <SubContain>
-
-
-
-
    <Flag>
     <Borde>
     <div style={styles}/>
@@ -68,7 +64,7 @@ export const CardDetail = ({
         <SeparateOne>
         <Div>
 
-        <Title1>Native Name:<Title2> {nName}</Title2></Title1>
+        <Title1>Native Name:<Title2>{nName ? nName : 'Not exist'}</Title2></Title1>
         </Div>
         <Div>
 
@@ -76,11 +72,11 @@ export const CardDetail = ({
         </Div>
         <Div>
 
-        <Title1>Region:<Title2> {region}</Title2></Title1>
+        <Title1>Region:<Title2> {region ? region : 'Not exist'}</Title2></Title1>
         </Div>
         <Div>
 
-        <Title1>Sub Region:<Title2> {subRegion}</Title2></Title1> 
+        <Title1>Sub Region:<Title2> {subRegion ? subRegion : 'Not exist'}</Title2></Title1> 
         </Div>
         <Div>
 
@@ -91,7 +87,7 @@ export const CardDetail = ({
         <SeparateTwo>
         <Div>
 
-        <Title1>Top Level Domain:<Title2> {topLevel}</Title2></Title1>
+        <Title1>Top Level Domain:<Title2> {topLevel ? topLevel : 'Not exist'}</Title2></Title1>
         </Div>
         <Div>
 
@@ -107,7 +103,7 @@ export const CardDetail = ({
         <Border>
          <P>Border Countries:</P> 
          <Box>
-           {borderCountries.map(el=><Link to={`/details/${el}`} key={el}><ButtonBorder onClick={handleOnclick}>{el}</ButtonBorder></Link>)}
+           {!borderCountries? 'No border Countries' :borderCountries.map(el=><Link to={`/details/${el}`} key={el}><ButtonBorder onClick={handleOnclick}>{el}</ButtonBorder></Link>)}
            </Box>  
         </Border>
     </Info>
