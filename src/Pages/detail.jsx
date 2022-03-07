@@ -47,12 +47,9 @@ export const Detail = ()=>{
     )
 }
 
-const fontColor = '#ffffff'
-const bgColorL = '#2b3743';
-const bgColor = '#202c37';
+
 
 const Container = styled.div`
-   background-color: ${bgColor};
    height: 99vh;
    display: flex;
    flex-direction: column;
@@ -62,19 +59,19 @@ const Container = styled.div`
 
 
 const ContainButton = styled.div`
-    background-color: ${bgColor};
     height: 14%;
     width: 90%;
     display: flex;
     align-items: center;
 `
 const Button = styled.button` 
+    background-color: ${props=>props.theme.bgColorL};
+    color: ${props=>props.theme.text} ;
     width: 5rem;
     height: 2rem;
     border: none;
-    background-color: ${bgColorL};
-    color: ${fontColor};
     font-size:.8rem;
+    cursor: pointer;
 `
 
 const Render = styled.div` 

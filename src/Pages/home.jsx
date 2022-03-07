@@ -53,14 +53,13 @@ export const Home = ()=>{
     )
 }
 
-const fontColor = '#ffffff'
-const bgColorL = '#2b3743';
-const bgColor = '#202c37';
+
 
 const Container = styled.div` 
+    background-color: ${props=>props.theme.bgColor};
+    color: ${props=>props.theme.text} ;
     width:100%;
     min-height:100vh;
-    background-color: ${bgColor};
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -78,21 +77,22 @@ const Filters = styled.div`
 `
 
 const Input = styled.input` 
+    background-color: ${props=>props.theme.bgColorL};
+    color: ${props=>props.theme.text} ;
     width: 22rem;
     height: 2.5rem;
-    background-color: ${bgColorL};
-    color: ${fontColor};
     border: none;
     outline: none;
 
 `
 
 const Select = styled.select` 
+    background-color: ${props=>props.theme.bgColorL};
+    color: ${props=>props.theme.text} ;
     width: 10rem;
     height: 2.5rem;
     border: none;
-    background-color: ${bgColorL};
-    color: ${fontColor};
+    outline: none;
 `
 
 const Render = styled.div`

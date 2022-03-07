@@ -40,13 +40,12 @@ export const Country = ({name, image, population, region, capital, id})=>{
     )
 }
 
-const fontColor = '#ffffff'
-const bgColorL = '#2b3743';
-const bgColor = '#202c37';
+
 
 
 const Container = styled.div`
-    background-color: ${bgColorL};
+    background-color: ${props=>props.theme.bgColorL};
+    color: ${props=>props.theme.text} ; 
     margin-top: 4rem;
     width: 12rem;
     height: 17rem;
@@ -75,7 +74,6 @@ const Name = styled.h2`
     height: 30%;
     font-size: 1rem;
     font-weight: bold;
-    color: ${fontColor};
     margin: 0;
     display: flex;
     align-items: flex-end;
@@ -85,7 +83,6 @@ const Name = styled.h2`
 const Info = styled.div`
     height: 70%;
     font-weight: bold;
-    color: ${fontColor};
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -116,7 +113,6 @@ const Region = styled.div`
 
 const Capital = styled.div`
     height: 1rem;
-    color: ${fontColor};
     margin: 0;
     font-size: .8rem;
     display: flex;
@@ -126,7 +122,6 @@ const Capital = styled.div`
 `
 
 const SubTitle = styled.h3`
- color: ${fontColor};
  font-weight: 300;
 `
 

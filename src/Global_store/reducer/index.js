@@ -1,10 +1,11 @@
-import {CONTINENT, DETAIL, GETALL, SEARCH} from '../actions/types'
+import {CONTINENT, DARKMODE, DETAIL, GETALL, SEARCH} from '../actions/types'
 
 let initialState = {
     countries:[],
     detail:[],
     search:'',
-    continent:''
+    continent:'',
+    darkmode:'Light'
     
 }
 
@@ -29,6 +30,11 @@ export const reducer = (state = initialState, action)=>{
             return{
                 ...state,
                 detail: [...action.payload]
+            }
+        case DARKMODE:
+            return{
+                ...state,
+                darkmode: action.payload
             }
 
         default: 

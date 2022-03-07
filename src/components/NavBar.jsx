@@ -1,30 +1,51 @@
+import { useState } from "react"
+import { useDispatch, useSelector } from "react-redux"
 import styled from "styled-components"
+import { DarkMode } from "../Global_store/actions"
 
 export const NavBar = ()=>{
+    
+    const [darkMode, setDarkMode] = useState(true)
+    const dispatch = useDispatch()
+    const $darkmode = useSelector((state)=>state.darkmode)
+
+
+   const handleChange = (e)=>{
+       if(darkMode){
+           setDarkMode(false)
+           dispatch(DarkMode('Light'))
+        }
+       if(!darkMode){
+           setDarkMode(true)
+           dispatch(DarkMode('Dark'))
+        }
+   }
+        
+
     return(
         <Navbar>
               <SubNav>
                 <Title>Where in the world?</Title>
-                <Button>☾ Dark mode</Button>
+                <Button onClick={handleChange}>☾ Dark mode</Button>
               </SubNav>
         </Navbar>
     )
+    
 }
 
-const fontColor = '#ffffff'
-const bgColorL = '#2b3743';
-const bgColor = '#202c37';
+
+
 
 const Navbar = styled.div`
+    background-color: ${props=>props.theme.bgColorL};
+    color: ${props=>props.theme.text} ;
     width: 100%;
-    background-color: ${bgColorL};
     display: flex;
     justify-content:center;
 
 `
 
 const SubNav = styled.div`
-    color: ${fontColor};
     width: 90%;
     display: flex;
     align-items: center;
@@ -37,8 +58,8 @@ const Title = styled.h4`
 `
 
 const Button = styled.button` 
-    background-color: #ffffff00;
-    color: ${fontColor};
+    background-color: ${props=>props.theme.bgColorL};
+    color: ${props=>props.theme.text} ;
     border: none;
     height: 2rem;
     cursor: pointer;

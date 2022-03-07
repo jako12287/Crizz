@@ -1,4 +1,4 @@
-import { CONTINENT, GETALL, SEARCH, DETAIL } from './types';
+import { CONTINENT, GETALL, SEARCH, DETAIL, DARKMODE } from './types';
 const API = 'https://restcountries.com/v3.1/all';
 const APIDETAIL = 'https://restcountries.com/v3.1/alpha/';
 
@@ -81,3 +81,13 @@ export const Continent = (value) => {
     });
   };
 };
+
+export const DarkMode = (value)=>{
+  return (dispatch)=>{
+     dispatch({
+       type:DARKMODE,
+       payload: value
+     })
+  }
+
+}

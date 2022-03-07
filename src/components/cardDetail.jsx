@@ -54,8 +54,11 @@ export const CardDetail = ({
 
 
 
+
    <Flag>
+    <Borde>
     <div style={styles}/>
+    </Borde>
    </Flag>
 
     <Info>
@@ -63,22 +66,50 @@ export const CardDetail = ({
 
         <ContainInfo>
         <SeparateOne>
+        <Div>
 
-        <TextTitle>Native Name:</TextTitle><TextSub> {nName}</TextSub>
-        <TextTitle>Population:</TextTitle><TextSub> {Dot(population)}</TextSub>
-        <TextTitle>Region:</TextTitle><TextSub> {region}</TextSub>
-        <TextTitle>Sub Region:</TextTitle><TextSub> {subRegion}</TextSub> 
-        <TextTitle>Capital:</TextTitle><TextSub> {capital ? capital[0] : 'capital does not exist'}</TextSub>
+        <Title1>Native Name:<Title2> {nName}</Title2></Title1>
+        </Div>
+        <Div>
+
+        <Title1>Population:<Title2> {Dot(population)}</Title2></Title1>
+        </Div>
+        <Div>
+
+        <Title1>Region:<Title2> {region}</Title2></Title1>
+        </Div>
+        <Div>
+
+        <Title1>Sub Region:<Title2> {subRegion}</Title2></Title1> 
+        </Div>
+        <Div>
+
+        <Title1>Capital:<Title2> {capital ? capital[0] : 'capital does not exist'}</Title2></Title1>
+        </Div>
         </SeparateOne>
 
         <SeparateTwo>
-        <TextTitle>Top Level Domain:</TextTitle><TextSub> {topLevel}</TextSub>
-        <TextTitle>Currencies:</TextTitle><TextSub> {currencies.join(', ')}</TextSub>
-        <TextTitle>languages:</TextTitle><TextSub> {languages.join(', ')}</TextSub>
+        <Div>
+
+        <Title1>Top Level Domain:<Title2> {topLevel}</Title2></Title1>
+        </Div>
+        <Div>
+
+        <Title1>Currencies:<Title2> {currencies.join(', ')}</Title2></Title1>
+        </Div>
+        <Div>
+
+        <Title1>Languages:<Title2> {languages.join(', ')}</Title2></Title1>
+        </Div>
         </SeparateTwo>
 
         </ContainInfo>
-        <Border>Border Countries: {borderCountries.map(el=><Link to={`/details/${el}`} key={el}><button onClick={handleOnclick}>{el}</button></Link>)}</Border>
+        <Border>
+         <P>Border Countries:</P> 
+         <Box>
+           {borderCountries.map(el=><Link to={`/details/${el}`} key={el}><ButtonBorder onClick={handleOnclick}>{el}</ButtonBorder></Link>)}
+           </Box>  
+        </Border>
     </Info>
    </SubContain>
 
@@ -86,12 +117,9 @@ export const CardDetail = ({
   );
 };
 
-const fontColor = '#ffffff'
-const bgColorL = '#2b3743';
-const bgColor = '#202c37';
+
 
 const Contain = styled.div` 
-  background-color: ${bgColor};
   height: 100%;
   display: flex;
   justify-content: center;
@@ -110,49 +138,85 @@ const Flag = styled.div`
   justify-content: start;
   align-items: start;
 `
+const Borde = styled.div` 
+      border: 10px solid ${props=>props.theme.bgColorL};
+      border-radius:10px;
+ 
+`
 
 const Info = styled.div`
     width: 60%;
+    height: 100%;
 `
 
 const Title = styled.div` 
+  height: 20%;
+  display: flex;
+  align-items: center;
   font-size: 1.5rem;
   font-weight: bold;
-  color: ${fontColor};
 
 `
 const ContainInfo = styled.div` 
   display: flex;
 `
-const Border = styled.div` 
-`
 
 const SeparateOne = styled.div` 
-  border:2px solid red;
   width: 20rem;
   display: flex;
+  flex-direction: column;
+  justify-content:end;
 `
 const SeparateTwo = styled.div` 
   width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content:start;
 `
 
-const TextTitle = styled.h3` 
-  color: ${fontColor};
-  width: 50%;
-  margin: 0;
-  border:2px solid red;
+const Div = styled.div`
+display: flex;
+height: 2rem;
 
-  
-  
 `
-const TextSub = styled.h3` 
-  color: ${fontColor};
-  width: 50%;
-  margin: 0;
-  border:2px solid red;
-
+const Title1 = styled.div` 
+margin: 0;
+width: 100%;
+font-weight: bold;
 
 
 `
 
+const Title2 = styled.h4` 
+margin: 0;
+display: inline-block;
+font-weight: 300;
+
+`
+const Border = styled.div` 
+  display: flex;
+  justify-content: start;
+`
+
+const Box = styled.div` 
+  width: 75%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+
+`
+
+const P = styled.p` 
+  width: 25%;
+  font-weight: bold;
+`
+const ButtonBorder = styled.button`  
+  background-color: ${props=>props.theme.bgColorL};
+  color: ${props=>props.theme.text} ;
+  font-size: .9rem;
+  width: 4.5rem;
+  border: none;
+  font-weight: 100;
+  cursor: pointer;
+`
 
