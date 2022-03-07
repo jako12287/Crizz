@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { useDispatch, useSelector } from "react-redux"
+import { useDispatch} from "react-redux"
 import styled from "styled-components"
 import { DarkMode } from "../Global_store/actions"
 
@@ -7,17 +7,19 @@ export const NavBar = ()=>{
     
     const [darkMode, setDarkMode] = useState(true)
     const dispatch = useDispatch()
-    const $darkmode = useSelector((state)=>state.darkmode)
 
 
    const handleChange = (e)=>{
        if(darkMode){
            setDarkMode(false)
-           dispatch(DarkMode('Light'))
+           localStorage.setItem('darkmode', 'Light')
+           dispatch(DarkMode(localStorage.getItem('darkmode')))
         }
        if(!darkMode){
            setDarkMode(true)
-           dispatch(DarkMode('Dark'))
+           localStorage.setItem('darkmode', 'Dark')
+           dispatch(DarkMode(localStorage.getItem('darkmode')))
+
         }
    }
         

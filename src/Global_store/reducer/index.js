@@ -5,7 +5,7 @@ let initialState = {
     detail:[],
     search:'',
     continent:'',
-    darkmode:'Light'
+    darkmode:localStorage.getItem('darkmode')
     
 }
 

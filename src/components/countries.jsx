@@ -2,6 +2,7 @@ import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { getCountries } from "../Global_store/actions"
 import { Country } from "./country"
+import { Loader } from "./Loader/Loader"
 import styled from "styled-components"
 
 export const Countries = ()=>{
@@ -19,7 +20,7 @@ export const Countries = ()=>{
 
     return(
         <Container>
-         {$countries && $countries.filter((el)=>el.region.toLowerCase().includes($continent))
+         {!$countries.length ? <Loader/> : $countries.filter((el)=>el.region.toLowerCase().includes($continent))
                                   .filter((el)=>el.name.toLowerCase().includes($search))
                                   .map((el)=><Country 
                                                 key={el.id}

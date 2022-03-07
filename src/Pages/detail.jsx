@@ -30,7 +30,7 @@ export const Detail = ()=>{
             </ContainButton>
 
             <Render>  
-                    {(!$detail) ? <Loader/> : $detail.map((el)=><CardDetail 
+                    {!$detail.length ? <Loader/> : $detail.map((el)=><CardDetail 
                         key={el.id}
                         image={el.image}
                         name={el.name}
