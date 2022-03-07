@@ -28,6 +28,7 @@ export const Countries = ()=>{
                                                 region={el.region}
                                                 capital={el.capital}
                                                 image={el.imageFlag}
+                                                id={el.id}
                                                 />)}
 
         </Container>

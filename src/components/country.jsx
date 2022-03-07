@@ -1,6 +1,7 @@
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
-export const Country = ({name, image, population, region, capital})=>{
+export const Country = ({name, image, population, region, capital, id})=>{
 
     const styles = {
         backgroundImage:`url(${image})`,
@@ -9,6 +10,9 @@ export const Country = ({name, image, population, region, capital})=>{
         backgroundSize: 'cover',
           
       }
+    const stylesLink = {
+        textDecoration:'none'
+    }
 
     let Dot = (x) => {  
         let parts = x.toString().split(".");
@@ -19,25 +23,27 @@ export const Country = ({name, image, population, region, capital})=>{
   
 
     return(
+    <Link style={stylesLink} to={`/details/${id}`}>
         <Container>
             <Flag style={styles}/>
             <SubContain>
                 <Name>{name}</Name>
-
                 <Info>
                 <Population>Population: <SubTitle>{Dot(population)}</SubTitle></Population>
                 <Region>Region: <SubTitle>{region}</SubTitle></Region>
-                <Capital>Capital: <SubTitle>{capital ? capital[0] : 'capital does not exist'}</SubTitle></Capital>
+                <Capital>Capital: <SubTitle>{capital ? capital[0] : 'not exist'}</SubTitle></Capital>
                 </Info>
 
             </SubContain>
         </Container>
+    </Link>
     )
 }
 
 const fontColor = '#ffffff'
 const bgColorL = '#2b3743';
 const bgColor = '#202c37';
+
 
 const Container = styled.div`
     background-color: ${bgColorL};

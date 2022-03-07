@@ -2,6 +2,7 @@ import { Countries } from "../components/countries"
 import { useDispatch } from "react-redux"
 import { Continent, Search } from "../Global_store/actions"
 import styled from "styled-components"
+import { NavBar } from "../components/NavBar"
 
 
 export const Home = ()=>{
@@ -27,12 +28,7 @@ export const Home = ()=>{
     return(
         <Container>
 
-            <Navbar>
-              <SubNav>
-                <Title>Where in the world?</Title>
-                <Button>☾ Dark mode</Button>
-              </SubNav>
-            </Navbar>
+            <NavBar/>
 
             <Filters>
                 <Input type='text' placeholder="   🔍  Search for a country..." onChange={handelChange}/>
@@ -63,6 +59,7 @@ const bgColor = '#202c37';
 
 const Container = styled.div` 
     width:100%;
+    min-height:100vh;
     background-color: ${bgColor};
     display: flex;
     flex-direction: column;
@@ -70,50 +67,32 @@ const Container = styled.div`
     
 `
 
-const Navbar = styled.div`
-    width: 100%;
-    background-color: ${bgColorL};
-    display: flex;
-    justify-content:center;
 
-`
-
-const SubNav = styled.div`
-    color: ${fontColor};
-    width: 90%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-`
-
-const Title = styled.h4`
-    width: 50%;
-`
-
-const Button = styled.button` 
-    border: none;
-    height: 2rem;
-`
 
 const Filters = styled.div`
     width: 90%;
     height: 4rem;
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: space-between;
 `
 
 const Input = styled.input` 
-    width: 20rem;
+    width: 22rem;
     height: 2.5rem;
     background-color: ${bgColorL};
+    color: ${fontColor};
+    border: none;
+    outline: none;
 
 `
 
 const Select = styled.select` 
     width: 10rem;
     height: 2.5rem;
+    border: none;
+    background-color: ${bgColorL};
+    color: ${fontColor};
 `
 
 const Render = styled.div`
